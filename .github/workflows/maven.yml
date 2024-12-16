@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '20'
-          distribution: 'temurin' # oder 'zulu', 'adopt', etc.
+          distribution: 'temurin'
 
       - name: Build with Maven
         run: mvn clean install
@@ -30,6 +30,9 @@ jobs:
 
       - name: Generate test report
         run: mvn surefire-report:report
+
+      - name: List target directory
+        run: ls -R target/site
 
       - name: Upload test report
         uses: actions/upload-artifact@v3
