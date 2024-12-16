@@ -32,10 +32,10 @@ jobs:
         run: mvn surefire-report:report
 
       - name: List target directory
-        run: ls -R target/site
+        run: ls -R target/reports
 
       - name: Upload test report
         uses: actions/upload-artifact@v3
         with:
           name: test-report
-          path: target/site/surefire-report.html
+          path: target/reports/surefire.html
