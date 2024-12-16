@@ -20,6 +20,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '20'
+          distribution: 'temurin' # oder 'zulu', 'adopt', etc.
 
       - name: Build with Maven
         run: mvn clean install
